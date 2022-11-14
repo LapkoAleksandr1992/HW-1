@@ -1,0 +1,42 @@
+.message {
+    padding: 20px;
+}
+
+.imageAndText {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.imageAndText img {
+    width: 50px;
+    margin-left: 30px;
+
+}
+
+.text {
+    background-color: #0066CC;
+    border-radius: 10px;
+}
+
+.text:after {
+    content: '';
+    position: absolute;
+    right: 84px;
+    top: 85px;
+    border: 2px solid transparent;
+    border-left: 21px solid #0066CC;
+}
+
+.name {
+
+}
+
+.messageText {
+
+}
+
+.time {
+    display: flex;
+    justify-content: flex-end;
+}
