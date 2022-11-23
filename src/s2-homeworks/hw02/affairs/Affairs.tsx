@@ -9,7 +9,7 @@ type AffairsPropsType = {
     deleteAffairCallback: (_id: number) => void   // ------my decision---------
     filter: FilterType
 }
-
+//commment
 function Affairs(props: AffairsPropsType) {
     const setAll = () => {
         props.setFilter('all') // need to fix------my decision---------
