@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { v1 } from 'uuid'
+import React, {useState} from 'react'
+import {v1} from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
+import user from "../hw08/User";
 
 /*
 * 1 - описать тип UserType
@@ -19,20 +20,21 @@ import GreetingContainer from './GreetingContainer'
 
 // types
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+    _id: string // -------MY SOLUSION!!!!!!
+    name: string //------ MY SOLUSION!!!!!!!!
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
-    const user = { // need to fix
+export const pureAddUserCallback = (name: string, setUsers: (user: UserType[]) => void, users: UserType[]) => { // need to fix any----- MY SOLUSION!!!!!!!!!!
+    const user = {
+        _id: v1(), name // need to fix ----- MY SOLUSION!!!!!!!!!!
     }
     setUsers([...users, user])
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
-
-    const addUserCallback = (name: any) => { // need to fix any
+    const [users, setUsers] = useState<UserType[]>([{_id: v1(), name: "ALEXXXX"}]) // need to fix any ------ MY SOLUSION!!!!!!!!
+    console.log(users)
+    const addUserCallback = (name: string) => { // need to fix any ------ MY SOLUSION!!!!!!!!s
         pureAddUserCallback(name, setUsers, users)
     }
 

@@ -2,14 +2,14 @@ import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    onBlur: any // need to fix any
-    onEnter: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-    lastUserName?: any // need to fix any
+    name: string // need to fix any ------ MY SOLUSION!!!!!!!!
+    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any------ MY SOLUSION!!!!!!!!
+    addUser: () => void // need to fix any ------ MY SOLUSION!!!!!!!!
+    onBlur: () => void // need to fix any------ MY SOLUSION!!!!!!!!
+    onEnter: (e: KeyboardEvent) => void // need to fix any------ MY SOLUSION!!!!!!!!
+    error: string // need to fix any------ MY SOLUSION!!!!!!!!
+    totalUsers: number // need to fix any------ MY SOLUSION!!!!!!!!
+    lastUserName: string // need to fix any------ MY SOLUSION!!!!!!!!
 }
 
 // презентационная компонента (для верстальщика)

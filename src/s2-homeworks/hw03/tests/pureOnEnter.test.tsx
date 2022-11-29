@@ -1,7 +1,7 @@
 import React from 'react'
 import {pureOnEnter} from '../GreetingContainer'
 
-let added: any
+let added: boolean
 const addUser = () => {
     added = true
 }
