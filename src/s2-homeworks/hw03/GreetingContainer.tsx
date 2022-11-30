@@ -2,6 +2,7 @@ import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
 import {UserType} from './HW3'
 
+
 type GreetingContainerPropsType = {
     users: UserType[] // need to fix any  ------ MY SOLUSION!!!!!!!!
     addUserCallback: (name: string) => void // need to fix any  ------ MY SOLUSION!!!!!!!!
@@ -47,6 +48,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
         error && setError('')
     }
     const addUser = () => {
+
         pureAddUser(name, setError, setName, addUserCallback)
     }
 
@@ -57,9 +59,9 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     const onEnter = (e: KeyboardEvent) => {
         pureOnEnter(e, addUser)
     }
-
-    const totalUsers: number = users.length // need to fix ------ MY SOLUSION!!!!!!!!
-    const lastUserName: string = 'some name' // need to fix------ MY SOLUSION!!!!!!!!
+    const usersLength = users.length
+    const totalUsers: number = usersLength // need to fix ------ MY SOLUSION!!!!!!!!
+    let lastUserName: string = users[usersLength-1].name// need to fix------ MY SOLUSION!!!!!!!!
 
     return (
         <Greeting
