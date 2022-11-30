@@ -7,7 +7,7 @@ type GreetingPropsType = {
     addUser: () => void // need to fix any ------ MY SOLUSION!!!!!!!!
     onBlur: () => void // need to fix any------ MY SOLUSION!!!!!!!!
     onEnter: (e: KeyboardEvent) => void // need to fix any------ MY SOLUSION!!!!!!!!
-    error: string // need to fix any------ MY SOLUSION!!!!!!!!
+    error?: string // need to fix any------ MY SOLUSION!!!!!!!!
     totalUsers: number // need to fix any------ MY SOLUSION!!!!!!!!
     lastUserName: string // need to fix any------ MY SOLUSION!!!!!!!!
 }
