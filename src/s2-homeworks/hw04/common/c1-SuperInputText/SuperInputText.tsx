@@ -7,6 +7,13 @@ import React, {
 } from 'react'
 import s from './SuperInputText.module.css'
 
+//* 1 - понять (и простить) SuperInputText
+// * 2 - в зависимости от типа и дизэйбла прицепить нужный класс в SuperButton.tsx (строка 21)
+// * 3 - дописать onChangeCallback в SuperCheckbox.tsx чтоб оба чекбокса работали на стенде
+// * 4 ?- сделать стили в соответствии с дизайном
+// * */
+
+
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>
@@ -38,7 +45,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
 
-        onChangeText?.(e.currentTarget.value)
+        onChangeText &&  onChangeText(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress?.(e)

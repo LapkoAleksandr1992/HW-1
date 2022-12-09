@@ -4,14 +4,20 @@ import React, {
     InputHTMLAttributes,
 } from 'react'
 import s from './SuperCheckbox.module.css'
+// * 1 - понять (и простить) SuperInputText
+// * 2 - в зависимости от типа и дизэйбла прицепить нужный класс в SuperButton.tsx (строка 21)
+// * 3 - дописать onChangeCallback в SuperCheckbox.tsx чтоб оба чекбокса работали на стенде
+// * 4 ?- сделать стили в соответствии с дизайном
+// * */
+
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>
-
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
     onChangeChecked?: (checked: boolean) => void
     spanClassName?: string
+
 }
 
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
@@ -28,7 +34,9 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // задачка на написание онченджа
-
+        onChangeChecked && onChangeChecked( e.currentTarget.checked)
+       // onChangeChecked?.(e.currentTarget.checked)
+        onChange && onChange(e)
     }
 
     const finalInputClassName = s.checkbox
