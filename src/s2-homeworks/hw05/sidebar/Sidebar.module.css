@@ -1,25 +1,98 @@
 .sidebar {
+
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+
+
+
+
 }
 
 .sidebar.open {
+
+    position: absolute;
+    height: 720px;
+    width: 317px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+
+    z-index: 20;
+
 }
 
 .background {
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+    background: #000000;
+    opacity: 0.3;
 }
 
 .nav {
+
 }
 
 .nav a {
+
+
 }
 
 .nav a:hover {
+
 }
 
 .nav a.active {
+
 }
 .close {
+    border: none;
+    background: #FFFFFF;
+    position: relative;
+    top: 22px; left: 269px;
+
 }
 
 .close img {
 }
+.navigation {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 45px;
+    margin-top: 65px;
+    margin-left: 70px;
+}
+
+.navigation:link {
+
+
+}
+
+.navigation:visited {
+
+
+}
+.navigation:hover {
+    color: #58ACFF;
+}
+.navigation:active {
+    color: #0059B2;
+    text-decoration-line: underline;
+
+}
+
