@@ -22,10 +22,6 @@ const HW6 = () => {
 
     }
 
-    // const save = () => {
-    //     saveState<string>('hw6-editable-span-value', value)
-    // }
-
     return (
         <div id={'hw6'}>
             <div className={s2.hwTitle}>Homework #6</div>
@@ -37,6 +33,8 @@ const HW6 = () => {
                         id={'hw6-spanable-input'}
                         value={value}
                         onChangeText={setValue}
+                        onBlur={saveRestoryHandler}
+                        onEnter={saveRestoryHandler}
                         spanProps={{
                             id: 'hw6-editable-span',
                             defaultText: 'enter text...',
