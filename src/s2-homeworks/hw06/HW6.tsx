@@ -3,14 +3,14 @@ import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
-import {GetRestoreState, saveRestoreState, setValue, value} from "./localStorage/localStorage";
+import {GetRestoreState, saveRestoreState} from "./localStorage/localStorage";
 
 /*onEnterCallback,onDoubleClickCallBack onBlurCallback
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций  ,
  * 2 - дописать логику функции restore
  * 3 - сделать стили в соответствии с дизайном
  */
-
+export const [value, setValue] = useState<string>('')
 const HW6 = () => {
 
 

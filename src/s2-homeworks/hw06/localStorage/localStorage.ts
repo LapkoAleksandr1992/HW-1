@@ -1,7 +1,6 @@
-import {useState} from "react";
+import {setValue, value} from "../HW6";
 
 
-export const [value, setValue] = useState<string>('')
 export const saveRestoreState = () => {
     const StateString=JSON.stringify(value)
     localStorage.setItem('taskKey',StateString)
