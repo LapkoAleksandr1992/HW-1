@@ -10,8 +10,20 @@ type PropsType = {
 }
 
 export const  Sidebar: FC<PropsType> = ({open, handleClose}) => {
-    const sidebarClass = s.sidebar
-        + (open ? ' ' + s.open : '')
+    // const sidebarClass = s.sidebar
+    //     + (open ? ' ' + s.open : '')
+
+    const sidebarClass = `
+    ${s.sidebar}    ${open? s.open:s.sidebar}  
+  
+    `
+
+//ПРИМЕРРРРРРРРРРРРР
+    // const finalClassName = `    ${s.button}
+    // ${color === 'red' ? s.red : color === 'secondary' ? s.secondary : s.default}
+    // ${disabled  ? s.disabled : ''}
+    //
+
     return (
         <>
             {/*затемнение справа от открытого меню*/}

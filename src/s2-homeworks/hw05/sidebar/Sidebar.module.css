@@ -1,6 +1,11 @@
 .sidebar {
+position: absolute;
 
-    font-family: Montserrat;
+    height: 720px;
+    width: 317px;
+left: -317px;
+
+
     font-size: 22px;
     font-weight: 600;
     line-height: 27px;
@@ -8,14 +13,12 @@
     text-align: left;
 
 
-
-
+    border: red dashed 4px;
 
 
 }
 
 .sidebar.open {
-
     position: absolute;
     height: 720px;
     width: 317px;
