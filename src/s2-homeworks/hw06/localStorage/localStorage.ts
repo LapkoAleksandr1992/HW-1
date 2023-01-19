@@ -1,11 +1,11 @@
-import {setValue, value} from "../HW6";
 
 
-export const saveRestoreState = () => {
+
+export const saveRestoreState = (value:string) => {
     const StateString=JSON.stringify(value)
     localStorage.setItem('taskKey',StateString)
 }
-export const GetRestoreState = () => {
+export const getRestoreState = (setValue:(value:string)=>void) => {
     const StateString=localStorage.getItem('taskKey')
     if(StateString !==null) {
         setValue(JSON.parse(StateString))

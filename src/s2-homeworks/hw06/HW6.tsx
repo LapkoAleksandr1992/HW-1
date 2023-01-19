@@ -3,16 +3,24 @@ import SuperEditableSpan from './common/c4-SuperEditableSpan/SuperEditableSpan'
 import s2 from '../../s1-main/App.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
 import s from './HW6.module.css'
-import {GetRestoreState, saveRestoreState} from "./localStorage/localStorage";
+import {getRestoreState, saveRestoreState} from "./localStorage/localStorage";
 
 /*onEnterCallback,onDoubleClickCallBack onBlurCallback
  * 1 - в файле SuperEditableSpan.tsx дописать логику функций  ,
  * 2 - дописать логику функции restore
  * 3 - сделать стили в соответствии с дизайном
  */
-export const [value, setValue] = useState<string>('')
-const HW6 = () => {
 
+const HW6 = () => {
+    const [value, setValue] = useState<string>('')
+    const saveRestoryHandler = () => {
+        saveRestoreState(value)
+
+    }
+    const getRestoryHandler = () => {
+        getRestoreState(setValue)
+
+    }
 
     // const save = () => {
     //     saveState<string>('hw6-editable-span-value', value)
@@ -37,12 +45,12 @@ const HW6 = () => {
                 </div>
 
                 <div className={s.buttonsContainer}>
-                    <SuperButton id={'hw6-save'} onClick={saveRestoreState}>
+                    <SuperButton id={'hw6-save'} onClick={saveRestoryHandler}>
                         Save to ls
                     </SuperButton>
                     <SuperButton
                         id={'hw6-restore'}
-                        onClick={GetRestoreState}
+                        onClick={getRestoryHandler}
                         xType={'secondary'}
                     >
                         Get from ls
