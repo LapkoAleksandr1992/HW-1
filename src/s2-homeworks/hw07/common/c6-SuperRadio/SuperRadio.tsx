@@ -5,6 +5,8 @@ import React, {
     HTMLAttributes,
 } from 'react'
 import s from './SuperRadio.module.css'
+import {Arrtype} from "../../HW7";
+
 
 type DefaultRadioPropsType = DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
@@ -17,13 +19,13 @@ type DefaultSpanPropsType = DetailedHTMLProps<
 >
 
 type SuperRadioPropsType = Omit<DefaultRadioPropsType, 'type'> & {
-    options?: any[]
-    onChangeOption?: (option: any) => void
+    options: Arrtype[]
+    onChangeOption: (option:string) => void
 
     spanProps?: DefaultSpanPropsType // пропсы для спана
 }
 
-const SuperRadio: React.FC<SuperRadioPropsType> = ({
+const SuperRadio    : React.FC<SuperRadioPropsType> = ({
     id,
     name,
     className,
@@ -35,7 +37,8 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // делают студенты
+        let a=e.currentTarget.value
+        onChangeOption(a)
     }
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
@@ -48,6 +51,9 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                       id={id + '-input-' + o.id}
                       className={finalRadioClassName}
                       type={'radio'}
+                      name={o.value}
+                      checked={value ==o.id}
+                      value={o.id}
                       // name, checked, value делают студенты
 
                       onChange={onChangeCallback}
