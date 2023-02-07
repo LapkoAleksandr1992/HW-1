@@ -13,7 +13,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options: Arrtype[]
-    onChangeOption: (option:string) => void
+    onChangeOption: (option:number) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
@@ -38,7 +38,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
         let a=e.currentTarget.value
-        onChangeOption(a)
+        onChangeOption(+a)
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
