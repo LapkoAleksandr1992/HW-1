@@ -1,6 +1,25 @@
 .buttonsContainer {
-}
 
+}
+.buttonsContainer button {
+    width: 84px;
+    height: 30px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #0066CC;
+    border-radius: 3px;
+    border: none;
+    margin-left: 21px;
+}
+.disable {
+    background: #0066CC;
+    opacity: 0.4;
+    border-radius: 3px;
+    border: none;
+}
 .clock {
 }
 

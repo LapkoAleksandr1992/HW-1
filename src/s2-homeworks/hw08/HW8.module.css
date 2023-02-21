@@ -1,7 +1,9 @@
 .item {
+
 }
 
 .item:last-of-type {
+
 }
 
 .users {
@@ -11,13 +13,22 @@
 }
 
 .container {
+    padding-left: 150px;
 }
 
 .thead {
+    height: 36px;
+    width: 606px;
+
+
 }
 
 .nameCol {
+
+
+
 }
 
 .ageCol {
+
 }
