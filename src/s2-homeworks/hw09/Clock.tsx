@@ -39,13 +39,10 @@ function Clock() {
     const start = () => {
         // пишут студенты // запустить часы (должно отображаться реальное время, а не +1)
         // сохранить ид таймера (https://learn.javascript.ru/settimeout-setinterval#setinterval)
-
        let timerId = +setInterval(() => {
            setDate(new Date())
        }, 1000);
-
         setTimerId(timerId)
-
         SetdissableButton(!dissableButton)
     }
 
@@ -64,13 +61,6 @@ function Clock() {
     const onMouseLeave = () => { // пишут студенты // спрятать дату если мышка не наведена
         SetshowOnMouseEnter(!showOnMouseEnter)
     }
-
-
-
-
-
-
-
 
     const stringTime =  date.toLocaleTimeString('ru-RU')|| <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
     const stringDate = monthName(monthNumber) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
