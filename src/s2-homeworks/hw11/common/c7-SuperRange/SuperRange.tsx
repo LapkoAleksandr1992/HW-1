@@ -11,6 +11,15 @@ const SuperRange: React.FC<SuperRangeType> = (props) => {
 
             sx={{
                 width: 147, height: 4, color: '#00CC22',
+                '& .MuiSlider-rail': {
+                    opacity: 1,
+                    backgroundColor: 'red',
+                },'& .MuiSlider-thumb': {
+                    height: 18,
+                    width: 18,
+                    backgroundColor: '#FFFFFF',
+                    border: '2px solid #00CC22'
+                   }
 
             }}
             {...props} // отдаём слайдеру пропсы если они есть (value например там внутри)

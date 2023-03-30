@@ -2,7 +2,7 @@
 type StateType={
     isLoading: boolean
 }
-const initState = {
+const initState:StateType = {
     isLoading: false,
 }
 type LoadingACType =ReturnType<typeof loadingAC>

@@ -11,7 +11,7 @@ const store = legacy_createStore(reducers)
 
 export default store
 
-export type AppStoreType = ReturnType<typeof reducers>
+    export type AppStoreType = ReturnType<typeof reducers>
 
 // @ts-ignore
 window.store = store // for dev // для того чтобы автотесты видели состояние данных
