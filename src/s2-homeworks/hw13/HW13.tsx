@@ -24,12 +24,12 @@ const HW13 = () => {
 
 
     const send = (x?: boolean | null) => () => {
-        setDisable(true)
+
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
                 : 'https://samurai.it-incubator.io/api/3.0/homework/test'
-
+        setDisable(true)
         setCode('')
         setImage('')
         setText('')
@@ -38,37 +38,45 @@ const HW13 = () => {
         axios
             .post(url, {success: x})
             .then((res) => {
+                debugger
                 setCode('Код 200!')
-                setText('...всё ок) код 200 - обычно означает что скорее всего всё ок)')
+                setInfo(res.data.info)
+                setText(res.data.errorText)
                 setImage(success200)
                 setDisable(false)
                 // дописать
 
             })
             .catch((e) => {
-                debugger
-                // статус
-                if (e.response.status === 400) {
-                    setCode('Ошибка 400!')
-                    setText('Ты не отправил success в body вообще! ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
-                    setImage(error400)
 
-                }
-                else if  (e.response.status === 500) {
-                    setCode('Ошибка 500!')
-                    setText('эмитация ошибки на сервере ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
-                    setImage(error500)
-                } else  {
-                    setCode('Error!')
-                    setText('Network Error AxiosError')
-                    setImage(errorUnknown)
-                }
+                    // статус
+                    if (e.response.status === 400) {
+                        debugger
+                        setCode('Ошибка 400!')
 
-                // дописать
-            }
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                        setImage(error400)
+
+                    } else if (e.response.status === 500) {
+                        setCode('Ошибка 500!')
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                        setImage(error500)
+                    } else {
+                        setCode('Error!')
+                        setText(e.message)
+                        setInfo(e.name)
+                        setImage(errorUnknown)
+
+                    }
+
+                    // дописать
+                }
             )
-            .finally(()=> {
+            .finally(() => {
                 setDisable(false)
+
             })
     }
 
