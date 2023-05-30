@@ -12,7 +12,7 @@ import s from './HW7.module.css'
 * */
 export type Arrtype={
     id: number,
-    value: string
+    value: string|number
 }
 const arr = [
     { id: 1, value: 'X' },

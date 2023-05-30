@@ -15,16 +15,17 @@ type SuperSelectPropsType = DefaultSelectPropsType & {
     id:string
     options: Arrtype[]
     value:number
-    onChangeOption: (option:number) => void
+    onChangeOption?: (option:number) => void
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = ({
     options,
     className,
     onChange,
-    onChangeOption,
+                                                         onChangeOption,
     ...restProps
 }) => {
+
     const mappedOptions: any[] = options
         ? options.map((o) => (
               <option
@@ -33,16 +34,16 @@ const SuperSelect: React.FC<SuperSelectPropsType> = ({
                   key={o.id}
                   value={o.id}
               >
-                  {o.value}
+                  { o.value}
               </option>
           ))
         : [] // map options with key
 
     const onChangeCallback = (e: ChangeEvent<HTMLSelectElement>) => {
-
         let a = e.currentTarget.value
+        onChange?.(e)
 
-        onChangeOption(+a)
+
     }
 
     const finalSelectClassName = s.select + (className ? ' ' + className : '')
